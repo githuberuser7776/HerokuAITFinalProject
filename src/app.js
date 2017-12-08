@@ -7,8 +7,11 @@ const session = require('cookie-session');
 const bodyParser = require('body-parser');
 const symptoms = require('./symptoms');
 const mongoose = require('mongoose');
+
+require('./db.js');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+
 
 const app = express();
 
@@ -27,34 +30,13 @@ app.use(session({keys: ['secretkey1', 'secretkey2', '...']}));
 app.use(passport.initialize());
 app.use(passport.session());
 
-const Account = require('./models/account');
-const savedRecommendations = require('./models/recommendation');
-const Feedback = require('./models/feedback')
+const Account = mongoose.model('Account');
+const savedRecommendations = mongoose.model('savedRecommendations');
+const Feedback = mongoose.model('Feedback');
 passport.use(new LocalStrategy(Account.authenticate()));
 
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
-
-// is the environment variable, NODE_ENV, set to PRODUCTION?
-let dbconf;
-if (process.env.NODE_ENV === 'PRODUCTION') {
- // if we're in PRODUCTION mode, then read the configration from a file
- // use blocking file io to do this...
- const fs = require('fs');
- const path = require('path');
- const fn = path.join(__dirname, 'config.json');
- const data = fs.readFileSync(fn);
-
- // our configuration file will be in json, so parse it and set the
- // conenction string appropriately!
- const conf = JSON.parse(data);
- dbconf = conf.dbconf;
-} else {
- // if we're not in PRODUCTION mode, then use
- dbconf = 'mongodb://localhost/sw2845';
-}
-
-mongoose.connect(dbconf);
 
 
 app.get('/', function(req, res) {

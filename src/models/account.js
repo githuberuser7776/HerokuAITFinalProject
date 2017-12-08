@@ -14,5 +14,5 @@ const savedRecommendations = new Schema({
 
 Account.plugin(passportLocalMongoose);
 
-module.exports = mongoose.model('Account', Account);
+mongoose.model('Account', Account);
 //module.exports = mongoose.model('savedRecommendations', savedRecommendations);
