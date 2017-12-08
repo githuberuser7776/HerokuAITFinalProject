@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  Back to
+  <a href = "http://localhost:3000/profile"> My Profile<a> <br>
+
+<h1>Your fellow users have recommended these symptoms: </h1>
+
+<ul>
+{{#each items}}
+    <li>{{ this }}</li>
+{{/each}}
+</ul>
+<br>
+
+Total number of recommendations: {{numberSymptomsT}}
+
+</body>
+</html>

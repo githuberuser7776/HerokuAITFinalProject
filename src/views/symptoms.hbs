@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form method = "POST" action="">
+ <fieldset>
+	 <legend>Personal information:</legend>
+	 Your symptom is: {{theSymptom}}<br>
+	 <input type="text" name="symptomName"><br>
+	 Pain Rating is: {{thePain}}<br>
+	 <input type="text" name="painNumber"><br><br>
+	 <input type="submit" value="Submit">
+ </fieldset>
+</form>
+
+<a href = "http://localhost:3000/">Home Page</a>
+<a href = "http://localhost:3000/profile"> MyProfile<a?
+
+</body>
+</html>
+<!--
+
+Your current symptom is: {{theSymptom}}
+<form method="POST" action="">
+	What is wrong:
+	<input type="text" name="symptomName"><br>
+	<input type="text" name="painNumber"><br>
+	<input type="button" value="Submit" onClick="postResult()">
+</form>
+Rate your Pain: {{thePain}}
+<form action="" method="POST">
+				 Rate your pain: <input type="text" name="number" id ="number"><br/>
+				 <input type="button" value="Submit" onClick="postResult()">
+			 </form>
+
+			 <script>
+				 function postResult() {
+					 let newElement = document.createElement("p");
+					 let node = document.createTextNode(document.getElementbyId('number').value);
+					 newElement.appendChild(node);
+					 var element = document.getElementbyId("number");
+					 element.appendChild(newElement);
+					 console.log(document.getElementbyId('number').value);
+				}
+			 </script>

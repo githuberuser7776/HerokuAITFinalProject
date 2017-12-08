@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Do You Have a Cold?</h1>
+
+Welcome {{user}}. <br>
+
+<form method = "POST" action="">
+ <fieldset>
+	 <legend>Questionaire</legend>
+	 Choose three different symptoms: {{theSymptom}}<br>
+   Less than 3 symptoms? Leave them blank! <br>
+   Symptom 1:
+   <select name="symptomName">
+     <option value="None"></option>
+     <option value="Runny or stuffy nose">Runny or stuffy nose</option>
+     <option value="Sore throat">Sore throat</option>
+     <option value="Cough">Cough</option>
+     <option value="Congestion">Congestion</option>
+     <option value="Slight body aches or a mild headache">Slight body aches or a mild headache</option>
+     <option value="Sneezing">Sneezing</option>
+     <option value="Low-grade fever">Low-grade fever</option>
+     <option value="Generally feeling unwell(malaise)">Generally feeling unwell(malaise)</option>
+   </select> <br>
+    Symptom 2:
+    <select name="symptomName1">
+      <option value="None"></option>
+      <option value="Runny or stuffy nose">Runny or stuffy nose</option>
+      <option value="Sore throat">Sore throat</option>
+      <option value="Cough">Cough</option>
+      <option value="Congestion">Congestion</option>
+      <option value="Slight body aches or a mild headache">Slight body aches or a mild headache</option>
+      <option value="Sneezing">Sneezing</option>
+      <option value="Low-grade fever">Low-grade fever</option>
+      <option value="Generally feeling unwell(malaise)">Generally feeling unwell(malaise)</option>
+    </select> <br>
+    Symptom 3:
+    <select name="symptomName2">
+      <option value="None"></option>
+      <option value="Runny or stuffy nose">Runny or stuffy nose</option>
+      <option value="Sore throat">Sore throat</option>
+      <option value="Cough">Cough</option>
+      <option value="Congestion">Congestion</option>
+      <option value="Slight body aches or a mild headache">Slight body aches or a mild headache</option>
+      <option value="Sneezing">Sneezing</option>
+      <option value="Low-grade fever">Low-grade fever</option>
+      <option value="Generally feeling unwell(malaise)">Generally feeling unwell(malaise)</option>
+    </select> <br> <br>
+	  Symptom severity (1-10): {{thePain}}<br>
+    (0 if no symptom) <br>
+    Symptom 1:
+    <select name="Pain">
+    <option value="0" type ="number">0</option>
+     <option value="1" type ="number">1</option>
+     <option value="2" type ="number">2</option>
+     <option value="3"type ="number">3</option>
+     <option value="4"type ="number">4</option>
+     <option value="5"type ="number">5</option>
+     <option value="6"type ="number">6</option>
+     <option value="7"type ="number">7</option>
+     <option value="8"type ="number">8</option>
+     <option value="9"type ="number">9</option>
+     <option value="10"type ="number">10</option>
+   </select>
+       Symptom 2:
+     <select name="Pain1">
+       <option value="0" type ="number">0</option>
+        <option value="1"type ="number">1</option>
+        <option value="2"type ="number">2</option>
+        <option value="3"type ="number">3</option>
+        <option value="4"type ="number">4</option>
+        <option value="5"type ="number">5</option>
+        <option value="6"type ="number">6</option>
+        <option value="7"type ="number">7</option>
+        <option value="8"type ="number">8</option>
+        <option value="9"type ="number">9</option>
+        <option value="10"type ="number">10</option>
+    </select>
+        Symptom 3:
+      <select name="Pain2">
+        <option value="0"type ="number">0</option>
+         <option value="1"type ="number">1</option>
+         <option value="2"type ="number">2</option>
+         <option value="3"type ="number">3</option>
+         <option value="4"type ="number">4</option>
+         <option value="5"type ="number">5</option>
+         <option value="6"type ="number">6</option>
+         <option value="7"type ="number">7</option>
+         <option value="8"type ="number">8</option>
+         <option value="9"type ="number">9</option>
+         <option value="10"type ="number">10</option>
+     </select> <br> <br>
+	 <input type="submit" value="Submit"> <br>
+ </fieldset>
+</form>
+<br>
+Have a symptom not here? Give us a recommendation <a href = "http://localhost:3000/recommend"> here</a> we might add it in the future! <br> <br>
+
+Don't like what you see here? Send us some <a href = "http://localhost:3000/feedback">feedback!</a>  <br>
+
+
+<br>
+<form align="right" method="get" action="/logout">
+  <label>
+  <input type="submit" value="Log Out">
+  </label>
+</form>
+
+</body>
+</html>
