@@ -59,7 +59,7 @@ app.post('/register', function(req, res, next) {
       return next(err);
     }
     //console.log('user registered!');
-    res.send('registered');
+    res.render('login');
   });
 });
 
